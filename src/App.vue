@@ -1,17 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>Cryptocurrency</h1>
+  <div class="cardContainer">
+    <div class="wrapper">
+      <Card />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Card from "./components/Card";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { Card },
+};
 </script>
 
 <style>
@@ -22,5 +23,19 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  margin: auto;
+}
+
+.wrapper {
+  display: flex;
+flex-wrap: wrap;
 }
 </style>
