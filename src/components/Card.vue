@@ -1,9 +1,15 @@
 <template>
-  <div v-for="coin in coins" :key="coin.id" class="card">
+  <div
+    v-if="coins.length > 0"
+    v-for="coin in coins"
+    :key="coin.id"
+    class="card"
+  >
     <h1>{{ coin.name }}</h1>
     <img :src="coin.image" :alt="coin.name" />
     <p>₹{{ coin.current_price }}</p>
   </div>
+  <div v-else><p>Loading..</p></div>
 </template>
 
 <script>
@@ -39,6 +45,7 @@ export default {
   height: 350px;
   width: 200px;
   cursor: pointer;
+  transition: width 0.2s, height 0.2s, transform 2s;
 
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -46,5 +53,9 @@ export default {
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.card:hover {
+  width: 220px;
+  height: 370px;
 }
 </style>
